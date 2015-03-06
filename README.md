@@ -1,116 +1,121 @@
 #ZOLTON'S DIVINITY ENGINE STORY EDITOR TOOLS
-///////////////////      Version 0.6.0                 /////////////////
-/*
-TODO
--Game Plan version 0.8.0<
--clean and sort dialogs
--Organize and format!
--double check/ test
-completing above achieves Version 1.0.0
--Give definitions for calls and querys
-Rearrange/Combine:
-Dialogs, _GLOBAL_Dialogs(Rearange!), 
-create template/guide:
-Compagion/Henchmen, standard quests, shopOwners?, NPCs 
+###      Version 0.6.0
 
-Game Plan
-Big Files
-Thievery NPC Action Triggers, Thievery OBJECT triggers, Thievery OBJECT_CLASS triggers, Vandalism Triggers
-General Look
-Test_Bert, GLOBAL_DLC, _GLOBAL_ItemRotationPuzzles
-*/
+-----
 
+##TODO
+- version 0.8.0<
+..* Go through files
+..- Big Files
+....- Thievery NPC Action Triggers
+....- Thievery OBJECT triggers
+....- Thievery OBJECT_CLASS triggers
+....-  Vandalism Triggers
+..- General Look
+....- Test_Bert
+....- GLOBAL_DLC
+....- _GLOBAL_ItemRotationPuzzles
+- Version 1
+..* clean and sort dialogs
+..* Organize and format!
+..* double check/ test
+- More
+..- Give definitions for calls and querys
+- Rearrange/Combine:
+..- Dialogs
+..- _GLOBAL_Dialogs(Rearange!), 
+- create template/guide:
+..- Compagion/Henchmen
+..- standard quests
+..- shopOwners?
+..- NPCs 
 
-/////Template///////////
-/*   Notes
+----
 
-*/
-/****Invovled Databases****/
+##   TABLE OF CONTENTS
+### Characters
+* Move Character
+* COMBAT
 
-/****Useful Procedures****/
+### NPCs
+* Story NPC
+* NPC stats
+* Removing NPC
+* Trade
+* Shop Owners
+* Ownerships
+* Pets
+* NPC Groups
 
-/*   Define Keywords
+### Player-NPC Relationships
+* Attitude
+* Relations
+* Reputation
 
-*/
+### Dialogs
+* On Click Dialogs
+* Companion Dialog
+* Threatened
+* Hostile
+* Special: Animal Food
+* Stroy Dialog
+* Mandatory Dialog
+* One Shot Dialog
+* Warning Dialogs
+* Character Events
+* Generic Dialogs
+* Party Dialog
 
-//////////////   TABLE OF CONTENTS  ////////
-/*
----Characters
-Move Character
-COMBAT
+### Companions And Henchmen
+* General
+* Companions
+* Henchmen
 
----NPCs
-Story NPC
-NPC stats
-Removing NPC
-Trade
-Shop Owners
-Ownerships
-Pets
-NPC Groups
+### For Players
+* Waypoints
+* Persuasion
+* Traits
+* Player Comments
+* Affection Between Players
+* Journal & Discription
+* Tutorial Messages
 
----Player-NPC Relationships
-Attitude
-Relations
-Reputation
+### Items
+* General
+* Doors
+* Hidden Walls
+* Shoveling Stuff
 
----Dialogs
-On Click Dialogs
-Companion Dialog
-Threatened
-Hostile
-Special: Animal Food
-Stroy Dialog
-Mandatory Dialog
-One Shot Dialog
-Warning Dialogs
-Character Events
-Generic Dialogs
-Party Dialog
+### Areas
+* Triggers
+* Exploration Bonuses
+* SubRegion
+* Ambush
+* Forbindden Areas
+* CIRDialog
 
----Companions And Henchmen
-Companions and Henchmen
+### Ilegals
+* Illegal Poop
+* Sneaking
+* Guards
 
----For Players
-Waypoints
-Persuasion
-Traits
-Player Comments
-Affection Between Players
-Journal & Discription
-Tutorial Messages
+###General
+* Time
+* Autosave
+* Generic Quest Reward
+* Effects
+* Freezing characters
+* Object Timers
+* Counters
+* Stack
+* Book Keeping
+* Useless Stuff
 
----Items
-General
-Doors
-Hidden Walls
-Shoveling Stuff
+----
 
----Areas
-Triggers
-Exploration Bonuses
-SubRegion
-Ambush
-Forbindden Areas
-CIRDialog
+^//--+([^-]+).+\n.+\n
+----\n##$1
 
----Ilegals
-Illegal Poop
-Sneaking
-Guards
-
----General
-Time
-Autosave
-Generic Quest Reward
-Effects
-Freezing characters
-Object Timers
-Counters
-Stack
-Book Keeping
-Useless Stuff
-*/
 
 //------------------------Characters------------------------//
 /*
@@ -1767,4 +1772,4 @@ StopTradingAndGiveWarning((CHARACTER)_Player,(CHARACTER)_Npc);
 */
 
 
-/////////////////////   Made by Zolton     //////////////////////////////
+# Made by Zolton
