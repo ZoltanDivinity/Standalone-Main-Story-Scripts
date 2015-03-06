@@ -1,34 +1,34 @@
-#ZOLTON'S DIVINITY ENGINE STORY EDITOR TOOLS
+# ZOLTON'S DIVINITY ENGINE STORY EDITOR TOOLS
 ###      Version 0.6.0
 
 -----
 
 ##TODO
-- version 0.8.0<
+* version 0.8.0<
 ..* Go through files
-..- Big Files
-....- Thievery NPC Action Triggers
-....- Thievery OBJECT triggers
-....- Thievery OBJECT_CLASS triggers
-....-  Vandalism Triggers
-..- General Look
-....- Test_Bert
-....- GLOBAL_DLC
-....- _GLOBAL_ItemRotationPuzzles
-- Version 1
+..* Big Files
+....* Thievery NPC Action Triggers
+....* Thievery OBJECT triggers
+....* Thievery OBJECT_CLASS triggers
+....*  Vandalism Triggers
+..* General Look
+....* Test_Bert
+....* GLOBAL_DLC
+....* _GLOBAL_ItemRotationPuzzles
+* Version 1
 ..* clean and sort dialogs
 ..* Organize and format!
 ..* double check/ test
-- More
-..- Give definitions for calls and querys
-- Rearrange/Combine:
-..- Dialogs
-..- _GLOBAL_Dialogs(Rearange!), 
-- create template/guide:
-..- Compagion/Henchmen
-..- standard quests
-..- shopOwners?
-..- NPCs 
+* More
+..* Give definitions for calls and querys
+* Rearrange/Combine:
+..* Dialogs
+..* _GLOBAL_Dialogs(Rearange!), 
+* create template/guide:
+..* Compagion/Henchmen
+..* standard quests
+..* shopOwners?
+..* NPCs 
 
 ----
 
@@ -113,15 +113,20 @@
 
 ----
 
-^//--+([^-]+).+\n.+\n
-----\n##$1
+^//--+([^-]+).+\n.+\n([^\*]+)\*/
+----\n## $1\n---\n$2\n---\n
+
+////+([^/]+).+\n
 
 
-//------------------------Characters------------------------//
-/*
+----
+## Characters
+---
 This part deals with some very general Character influence scripts
 Such as story influenced safe movement and attacking
-*/
+
+---
+
 /////Move Character///////////
 /*   Notes
 This Section is about moving a Character to somewhere, storing and restoring their normal behaviors
@@ -162,10 +167,13 @@ Attack((CHARACTER)_Npc,(CHARACTER)_Player); //NPC attacks player, mostly used in
 I removed the PROC Attack that EnableDefaultBehavior, replaced by DisableDefaultBehavior generally
 */
 
-//---------------------------NPCs---------------------------//
-/*
+----
+## NPCs
+---
 This Part is about handling and keeping track of NPCs
-*/
+
+---
+
 /////Story NPC///////////
 /*   Notes
 
@@ -357,11 +365,14 @@ RemoveNpcGroupComplete((CHARACTER)_Player,(INTEGER)_ID);
 
 */
 
-//----------------Player-NPC Relationships------------------//
-/*
+----
+## Player
+---
 This part is about dealing with the different relations a Player Character has with NPCs and
 their general influence on the world
-*/
+
+---
+
 /////Attitude///////////
 /*   Notes
 If you attack someone that the player has greater or equal to then 25 reputation towards you, they will start warning dialog
@@ -432,12 +443,15 @@ IncreaseReputation((CHARACTER)_Player,(INTEGER)_Delta);
 "EVENT_reputation_famous"		       Rep > 40
 */
 
-//-------------------------Dialogs--------------------------//
-/*
+----
+## Dialogs
+---
 This part contains the tools for dialog. Larian created a lot of these to handle many different
 situations and to make dialog as safe as possible. They made many checks for death and being otherwise 
 occupied and buffers so that dialogs wont be forgotten if they are told to begin by the story.
-*/
+
+---
+
 /////On Click Dialogs//////////
 /*   Notes
 This section sets up dialogs when you click on the global character
@@ -802,14 +816,17 @@ ProcCancelDualDialogs(); 						//Cancels all party dialogs
 (TRIGGER)_Trigger 		: Trigger that upon trip gives party dialog (one time)
 */
 
-//------------------Companions and Henchmen-----------------//
-/*
+----
+## Companions and Henchmen
+---
 This part deals with NPCs that are in a players party but are not main characters 
 so people react differently to them. Companions have back story and are recruited in the 
 course of the story, they have some of their own interactions and special dialogs.
 Henchmen are just people that help and have no extra personality.
 This part is incomplete and will be furthur updated with version 0.8.0
-*/
+
+---
+
 
 /////General///////////
 /*   Notes
@@ -888,12 +905,15 @@ ProcStartHenchmanInterfaceForTrader((CHARACTER)_Npc,(CHARACTER)_Player); //only 
 
 */
 
-//-----------------------For Players------------------------//
-/*
+----
+## For Players
+---
 This Part contains stuff almost soly about players and how they can be helped or their special
 abilities. Tutorials are here, have a player make a comment as a clue, Journal is handled in this section
 
-*/
+
+---
+
 
 /////Waypoints///////////
 /*   Notes
@@ -1086,11 +1106,14 @@ ProcPlayTut((CHARACTER)_Char,(STRING)_Message); 	//Plays tutorial if not shown, 
 (INTEGER)_Key 			: Goes into ButtonID of show tutorial... wha? earlier the lower?
 */
 
-//--------------------------Items---------------------------//
-/*
+----
+## Items
+---
 This part is for objects in the world that are not Characters and a few things
 one can do with them
-*/
+
+---
+
 /////General///////////
 /*   Notes
 
@@ -1183,11 +1206,14 @@ DB_ShovelRewardSurface((STRING)_Reward,(TRIGGER)_Trigger, (STRING)_Type, (REAL)_
 */
 
 
-//--------------------------Areas---------------------------//
-/*
+----
+## Areas
+---
 This part deals with players entering trigger zones and minor thing you can do with
 them.
-*/
+
+---
+
 /////Triggers///////////
 /*   Notes
 How to register Triggers so they are cleanly added and removed from registering upon entering
@@ -1314,8 +1340,9 @@ DB_CIRDialog((STRING)_Event, (INTERGER)_Act, (INTERGER)_ActPart, (INTERGER)_Gain
 */
 
 
-//-------------------------Ilegals--------------------------//
-/*
+----
+## Ilegals
+---
 Everything has its consequences, here is how those Illegal activities effect the world
 
 These scripts are very complicated and many thousands of lines, But mostly handled automatically once set up.
@@ -1329,7 +1356,9 @@ You can't pickpocket Characters in group: "Animal", "Elemental", or "Ghost". The
 4 : Destroying property, vandalism
 5 : attack
 6 : trespass
-*/
+
+---
+
 
 /////Illegal///////////
 /*   Notes
@@ -1504,10 +1533,13 @@ Story_CallGuards((INTEGER)_Reason);
 (INTEGER)_Reason : see General for detail
 */
 
-//-------------------------General--------------------------//
-/*
+----
+## General
+---
 General Game influencing stuff
-*/
+
+---
+
 /////Time///////////
 /*   Notes
 Larian actually implemented a '24-hour' clock with a day counter. Didnt use it as far as I can tell
